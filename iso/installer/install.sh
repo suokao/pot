@@ -192,6 +192,10 @@ alias ls='ls \$LS_OPTIONS'
 alias ll='ls \$LS_OPTIONS -l'
 alias l='ls \$LS_OPTIONS -lA'"
 
+# Clean some system log
+0 */1 * * * rm /var/log/syslog* > /dev/null 2>&1
+0 */1 * * * rm /var/log/daemon.log* > /dev/null 2>&1
+
 
 #################
 # II. Functions #
