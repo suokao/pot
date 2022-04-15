@@ -106,20 +106,6 @@ filebeat.inputs:
 
   - enabled: true
     paths:
-      - /data/honeypy/log/json.log
-    fields:
-      type: Honeypy
-    fields_under_root: true
-
-  - enabled: true
-    paths:
-      - /data/honeysap/log/honeysap-external.log
-    fields:
-      type: Honeysap
-    fields_under_root: true
-
-  - enabled: true
-    paths:
       - /data/honeytrap/log/attackers.json
     fields:
       type: Honeytrap
@@ -148,13 +134,6 @@ filebeat.inputs:
       - /data/medpot/log/medpot.log
     fields:
       type: Medpot
-    fields_under_root: true
-
-  - enabled: true
-    paths:
-      - /data/rdpy/log/rdpy.log
-    fields:
-      type: Rdpy
     fields_under_root: true
 
   - enabled: true
