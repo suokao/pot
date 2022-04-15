@@ -21,7 +21,6 @@ networks:
   mailoney_local:
   medpot_local:
   redishoneypot_local:
-  ewsposter_local:
   spiderfoot_local:
 
 services:
@@ -426,41 +425,6 @@ services:
 ##################
 
 #### ELK
-## Elasticsearch service
-  elasticsearch:
-    container_name: elasticsearch
-    restart: always
-    environment:
-     - bootstrap.memory_lock=true
-     - ES_JAVA_OPTS=-Xms2048m -Xmx2048m
-     - ES_TMPDIR=/tmp
-    cap_add:
-     - IPC_LOCK
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
-      nofile:
-        soft: 65536
-        hard: 65536
-    mem_limit: 4g
-    ports:
-     - "127.0.0.1:64298:9200"
-    image: "dtagdevsec/elasticsearch:2204"
-    volumes:
-     - /data:/data
-
-## Kibana service
-  kibana:
-    container_name: kibana
-    restart: always
-    depends_on:
-      elasticsearch:
-        condition: service_healthy
-    mem_limit: 1g
-    ports:
-     - "127.0.0.1:64296:5601"
-    image: "dtagdevsec/kibana:2204"
 
 ## Logstash service
   logstash:
@@ -477,6 +441,7 @@ services:
     image: "dtagdevsec/logstash:2204"
     volumes:
      - /data:/data
+     - /opt/logstash.conf:/etc/logstash/conf.d/logstash.conf
 
 ## Map Redis Service
   map_redis:
@@ -516,28 +481,6 @@ services:
     tty: true
     image: "dtagdevsec/map:2204"
 #### /ELK
-
-# Ewsposter service
-  ewsposter:
-    container_name: ewsposter
-    restart: always
-    networks:
-     - ewsposter_local
-    environment:
-     - EWS_HPFEEDS_ENABLE=false
-     - EWS_HPFEEDS_HOST=host
-     - EWS_HPFEEDS_PORT=port
-     - EWS_HPFEEDS_CHANNELS=channels
-     - EWS_HPFEEDS_IDENT=user
-     - EWS_HPFEEDS_SECRET=secret
-     - EWS_HPFEEDS_TLSCERT=false
-     - EWS_HPFEEDS_FORMAT=json
-    env_file:
-     - /opt/tpot/etc/compose/elk_environment
-    image: "dtagdevsec/ewsposter:2204"
-    volumes:
-     - /data:/data
-     - /data/ews/conf/ews.ip:/opt/ewsposter/ews.ip
 
 # Nginx service
   nginx:
