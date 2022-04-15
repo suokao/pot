@@ -5,7 +5,6 @@ version: '2.3'
 networks:
   cyberchef_local:
   heralding_local:
-  ewsposter_local:
   spiderfoot_local:
 
 services:
@@ -163,19 +162,6 @@ services:
      - "127.0.0.1:64302:9100"
     image: "dtagdevsec/head:1811"
     read_only: true
-
-# Ewsposter service
-  ewsposter:
-    container_name: ewsposter
-    restart: always
-    networks:
-     - ewsposter_local
-    env_file:
-     - /opt/tpot/etc/compose/elk_environment
-    image: "dtagdevsec/ewsposter:1811"
-    volumes:
-     - /data:/data
-     - /data/ews/conf/ews.ip:/opt/ewsposter/ews.ip
 
 # Nginx service
   nginx:
