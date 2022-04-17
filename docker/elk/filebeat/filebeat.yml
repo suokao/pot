@@ -151,6 +151,70 @@ filebeat.inputs:
     fields_under_root: true
     json.keys_under_root: true
     json.overwrite_keys: true 
+    
+  - enabled: true
+    paths:
+      - /data/ddospot/log/*.log
+    fields:
+      type: Ddospot
+    fields_under_root: true
+    json.keys_under_root: true
+    json.overwrite_keys: true 
+    
+  - enabled: true
+    paths:
+      - /data/endlessh/log/endlessh.log
+    fields:
+      type: Endlessh
+    fields_under_root: true
+    json.keys_under_root: true
+    json.overwrite_keys: true 
+    
+  - enabled: true
+    paths:
+      - /data/hellpot/log/hellpot.log
+    fields:
+      type: Hellpot
+    fields_under_root: true
+    json.keys_under_root: true
+    json.overwrite_keys: true 
+    
+  - enabled: true
+    paths:
+      - /data/honeypots/log/*.log
+    fields:
+      type: Honeypots
+    fields_under_root: true
+    json.keys_under_root: true
+    json.overwrite_keys: true  
+    
+  - enabled: true
+    paths:
+      - /data/log4pot/log/log4pot.log
+    fields:
+      type: Log4pot
+    fields_under_root: true
+    json.keys_under_root: true
+    json.overwrite_keys: true  
+ 
+  - enabled: true
+    paths:
+      - /data/redishoneypot/log/redishoneypot.log
+    fields:
+      type: Redishoneypot
+    fields_under_root: true
+    json.keys_under_root: true
+    json.overwrite_keys: true  
+    
+  - enabled: true
+    paths:
+      - /data/sentrypeer/log/sentrypeer.json
+    fields:
+      type: Sentrypeer
+    fields_under_root: true
+    json.keys_under_root: true
+    json.overwrite_keys: true  
+  
 
 processors:
   - drop_fields:
