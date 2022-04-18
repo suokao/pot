@@ -534,6 +534,8 @@ if [ "$myTPOT_DEPLOYMENT_TYPE" == "iso" ] || [ "$myTPOT_DEPLOYMENT_TYPE" == "use
     "HIVE_SENSOR" "T-Pot Hive Sensor: Honeypots & NSM" \
     "INDUSTRIAL" "Same as Standard with focus on Conpot" \
     "LOG4J" "Log4Pot, ELK, NSM & Tools" \
+    "COLLECTOR" "Heralding, ELK, NSM & Tools" \
+    "NEXTGEN" "NextGen (Glutton, HoneyPy)" \
     "MEDICAL" "Dicompot, Medpot, ELK, NSM & Tools" \
     "MINI" "Same as Standard with focus on qHoneypots" \
     "SENSOR" "Just Honeypots & NSM" 3>&1 1>&2 2>&3 3>&-)
