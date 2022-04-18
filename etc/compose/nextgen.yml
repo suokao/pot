@@ -427,18 +427,18 @@ services:
 #### ELK
 
 ## Logstash service
-  logstash:
-    container_name: logstash
-    restart: always
-    environment:
-     - LS_JAVA_OPTS=-Xms1024m -Xmx1024m
-    env_file:
-     - /opt/tpot/etc/compose/elk_environment
-    mem_limit: 2g
-    image: "dtagdevsec/logstash:2204"
-    volumes:
-     - /data:/data
-     - /opt/logstash.conf:/etc/logstash/conf.d/logstash.conf
+#  logstash:
+#    container_name: logstash
+#    restart: always
+#    environment:
+#     - LS_JAVA_OPTS=-Xms1024m -Xmx1024m
+#    env_file:
+#     - /opt/tpot/etc/compose/elk_environment
+#    mem_limit: 2g
+#    image: "dtagdevsec/logstash:2204"
+#    volumes:
+#     - /data:/data
+#     - /opt/logstash.conf:/etc/logstash/conf.d/logstash.conf
 
 ## Map Redis Service
   map_redis:
