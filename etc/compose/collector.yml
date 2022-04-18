@@ -63,8 +63,8 @@ services:
     restart: always
     environment:
      - LS_JAVA_OPTS=-Xms1024m -Xmx1024m
-    ports:
-      - "64450:64450"
+#    ports:
+#      - "64450:64450"
     depends_on:
       elasticsearch:
         condition: service_healthy
