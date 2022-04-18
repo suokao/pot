@@ -28,7 +28,7 @@ RUN apt-get update -y && \
     cd /root/dist/ && \
     aria2c -s 16 -x 16 https://artifacts.elastic.co/downloads/logstash/logstash-$LS_VER-$LS_ARCH.deb && \
     dpkg -i logstash-$LS_VER-$LS_ARCH.deb && \
-#    /usr/share/logstash/bin/logstash-plugin install logstash-output-gelf logstash-output-syslog && \
+    /usr/share/logstash/bin/logstash-plugin install logstash-output-gelf logstash-output-syslog && \
 #
 # Add and move files
     cd /root/dist/ && \
