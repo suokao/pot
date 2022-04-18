@@ -40,7 +40,7 @@ services:
         hard: 65536
     mem_limit: 4g
     ports:
-     - "0.0.0.0:64298:9200"
+     - "127.0.0.1:64298:9200"
     image: "dtagdevsec/elasticsearch:2204"
     volumes:
      - /data:/data
@@ -63,6 +63,8 @@ services:
     restart: always
     environment:
      - LS_JAVA_OPTS=-Xms1024m -Xmx1024m
+    ports:
+      - "64450:64450"
     depends_on:
       elasticsearch:
         condition: service_healthy
