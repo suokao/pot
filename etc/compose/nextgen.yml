@@ -479,6 +479,15 @@ services:
     image: "dtagdevsec/map:2204"
 #### /ELK
 
+## Filebeats service
+  filebeats:
+    container_name: filebeats
+    restart: always
+    image: "docker.elastic.co/beats/filebeat:7.9.2"
+    volumes:
+     - /data:/data
+     - /opt/filebeats.yml:/usr/share/filebeat/filebeat.yml:ro
+
 # Nginx service
   nginx:
     container_name: nginx
