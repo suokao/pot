@@ -777,6 +777,14 @@ case $myCONF_TPOT_FLAVOR in
     fuBANNER "SENSOR"
     ln -s /opt/tpot/etc/compose/sensor.yml $myTPOTCOMPOSE
   ;;
+  COLLECTOR)
+    fuBANNER "COLLECTOR"
+    ln -s /opt/tpot/etc/compose/collector.yml $myTPOTCOMPOSE
+  ;;
+  NEXTGEN)
+    fuBANNER "NEXTGEN"
+    ln -s /opt/tpot/etc/compose/nextgen.yml $myTPOTCOMPOSE
+  ;;
 esac
 
 # Let's load docker images
