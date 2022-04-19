@@ -227,4 +227,4 @@ processors:
         hostname: "${MY_HOSTNAME}"
 
 output.logstash:
-  hosts: ["<YOUR_CENTRAL_LOGSTASH_IP>:64450"]
+  hosts: ["<YOUR_CENTRAL_LOGSTASH_IP>:64305"]
