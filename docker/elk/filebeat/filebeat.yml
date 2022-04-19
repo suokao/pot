@@ -225,6 +225,9 @@ processors:
         exit_ip: "${MY_EXTIP}"
         in_ip: "${MY_INTIP}"
         hostname: "${MY_HOSTNAME}"
+  - decode_json_fields:
+      fields: "log"
+      overwrite_keys: true
 
 output.logstash:
   hosts: ["<YOUR_CENTRAL_LOGSTASH_IP>:64305"]
